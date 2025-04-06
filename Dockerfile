@@ -97,5 +97,7 @@ WORKDIR /var/www/html
 RUN composer update
 COPY ./src ./
 RUN chmod 755 *;
+COPY ./src/saved_qrcode /var/www/html/saved_qrcode
+RUN chmod -R 755 /var/www/html/saved_qrcode
 EXPOSE 80
 CMD ["php", "-S", "0.0.0.0:80"]
